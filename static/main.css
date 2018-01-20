@@ -86,6 +86,7 @@ main {
     padding: 20px 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
 }
 
 footer {
@@ -280,4 +281,11 @@ li{
   height: 35px;
   width: 200px;
   font-size: 20px;
+}
+
+/* map styling */
+#mapid {
+  height:500px;
+  width: 500px;
+  text-align: center;
 }

@@ -51,7 +51,7 @@ def position_handler(request, page_id):
     render(request, "positioninformation.html", {'position': position_information, "login": check_logged_in(request)})
 
 def map_handler(request):
-    request.write("Page Under Construction")
+    return render(request, 'map.html', {"login": check_logged_in(request)})
 
 def login_handler(request):
     render(request, "login.html", {"error": "", "login": check_logged_in(request)})
@@ -124,7 +124,7 @@ server.register(r'/searchresult/(.*)/(.+)/', searchresult_handler)
 server.register(r'/position/', positionlist_handler)
 server.register(r'/position/(\d+)/', position_handler) # Dynamic page | takes in a user id which is used
 server.register(r'/profile/(\d+)/', profile_handler) # Dynamic page | takes in a user id which is used
-#server.register(r'/map/', map_handler)
+server.register(r'/map/', map_handler)
 server.register(r'/signup/', profile_creator_handler, post = finished_profile_handler)
 server.register(r'/login/', login_handler, post = post_login_handler)
 server.register(r'/logout/', logout_handler)
